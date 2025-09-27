@@ -25,7 +25,33 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Ecommerce API",
         default_version='v1',
-        description="API documentation for Store project",
+        description=(
+            "## API Usage Instructions\n\n"
+            "Welcome to the **E_Commerce API**!\n\n"
+            "### Features\n"
+            "- Register and Login users\n"
+            "- Manage **Products** (create, list, update, delete)\n"
+            "- Browse **Categories**\n"
+            "- Add items to **Cart**\n"
+            "- Manage **Orders**\n\n"
+            "### Authentication\n"
+            "- Obtain a token from **`/api/token/`**.\n"
+            "- Include the token in your request header:\n\n"
+            "```\nAuthorization: Bearer <your_token>\n```\n\n"
+            "### Example Requests\n"
+            "**Create a Product**\n"
+            "```\nPOST /api/store/products/\nHeaders:\n  Authorization: Bearer <your_token>\nBody:\n  {\n"
+            '    "name": "Sample Product",\n'
+            '    "price": 99.99,\n'
+            '    "stock": 10,\n'
+            '    "description": "A sample item"\n'
+            "  }\n```\n\n"
+            "**Get All Products**\n"
+            "```\nGET /api/store/products/\n```\n\n"
+            "### Notes\n"
+            "- **POST/PUT/DELETE** endpoints require authentication.\n"
+            "- Public endpoints (like product listing) can be accessed without a token.\n"
+        ),
         terms_of_service="https://www.example.com/terms/",
         contact=openapi.Contact(email="support@example.com"),
         license=openapi.License(name="BSD License"),
