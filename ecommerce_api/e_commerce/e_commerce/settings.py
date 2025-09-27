@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'users.apps.UsersConfig',
     'rest_framework_simplejwt',
+    'drf_yasg',
    
 ]
 

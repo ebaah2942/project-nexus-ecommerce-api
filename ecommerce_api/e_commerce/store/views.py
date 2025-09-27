@@ -28,7 +28,7 @@ class CategoryViewSet(BaseViewSet):
 
 
 class ProductViewSet(BaseViewSet):
-    queryset = Product.objects.filter(is_active=True)
+    queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filterset_fields = {
         'category__slug': ['exact'],
@@ -37,6 +37,7 @@ class ProductViewSet(BaseViewSet):
     }
     ordering_fields = ['price', 'created_at']
     search_fields = ['name', 'description']
+    
 
 
 class ReviewViewSet(BaseViewSet):
